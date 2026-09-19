@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 Gamified To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <h1>🏆 Daily Quest Board</h1>
+        </div>
+        <div class="header-right">
+            <div class="stat-pill" id="streak-pill">🔥 Streak: <span id="streak-display">0</span> days</div>
+            <div class="stat-pill" id="points-pill">⭐ Points: <span id="points-display">0</span></div>
+            <div class="badge-display" id="badge-display">🥉 Bronze</div>
+        </div>
+    </header>
+
+    <!-- LEVEL PROGRESS BAR -->
+    <div class="level-bar-container">
+        <div class="level-info">
+            <span id="level-label">Level 1</span>
+            <span id="level-next">Next: 150 pts</span>
+        </div>
+        <div class="level-bar-bg">
+            <div class="level-bar-fill" id="level-bar-fill"></div>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- CALENDAR -->
+        <section id="calendar-section" class="card">
+            <h2>📅 Calendar</h2>
+            <div class="calendar-header">
+                <button id="prev-month">◀</button>
+                <span id="month-year-display">Month Year</span>
+                <button id="next-month">▶</button>
+            </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
+            <div class="calendar-legend">
+                <span class="legend-dot today-dot"></span> Today
+                <span class="legend-dot completed-dot"></span> Completed
+            </div>
+        </section>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-col">
+
+            <!-- DAILY TASKS -->
+            <section id="tasks-section" class="card">
+                <h2>✔️ Daily Tasks <span class="badge-count" id="tasks-count">0/0</span></h2>
+                <p class="sub">Complete tasks to earn <strong>30 pts</strong> each. Tasks reset daily at midnight.</p>
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="Add a daily task...">
+                    <button id="add-task-btn">+ Add</button>
+                </div>
+                <ul id="task-list"></ul>
+                <div class="all-complete-msg" id="all-complete-msg" style="display:none">
+                    🎉 All done for today! Amazing!
+                </div>
+            </section>
+
+            <!-- HOBBIES -->
+            <section id="hobbies-section" class="card">
+                <h2>🎨 Hobbies</h2>
+                <p class="sub">Track your hobbies and interests.</p>
+                <div class="input-group">
+                    <input type="text" id="hobby-input" placeholder="Add a hobby...">
+                    <button id="add-hobby-btn">+ Add</button>
+                </div>
+                <ul id="hobby-list"></ul>
+            </section>
+
+        </div>
+
+        <!-- LEADERBOARD -->
+        <section id="leaderboard-section" class="card">
+            <h2>🏅 Leaderboard — Top Days</h2>
+            <p class="sub">Your best scoring days are recorded here.</p>
+            <table id="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Date</th>
+                        <th>Points Earned</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    <tr><td colspan="3" style="text-align:center;color:#aaa;">No records yet. Complete tasks!</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
