@@ -1,2 +1,1 @@
-LIVE DEMO OF THIS PROJET IS HERE
-arpitsh03.github.io/gamified-todo-app
+https://arpitsh03.github.io/gamified-todo-app/
